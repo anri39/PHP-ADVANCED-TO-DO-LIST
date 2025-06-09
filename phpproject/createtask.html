@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Task</title>
+    <style>
+      body {
+        background-color: #f0f4f8;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .task-form-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 400px;
+      }
+
+      .task-form-container h2 {
+        text-align: center;
+        color: #4a90e2;
+        margin-bottom: 25px;
+      }
+
+      .task-form-container form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .task-form-container input,
+      .task-form-container select {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+
+      .task-form-container button {
+        padding: 12px;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .task-form-container button:hover {
+        background-color: #3b7dc4;
+      }
+
+      .task-form-container .back-link {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .task-form-container .back-link a {
+        text-decoration: none;
+        color: #4a90e2;
+        font-size: 14px;
+      }
+
+      .task-form-container .back-link a:hover {
+        text-decoration: underline;
+      }
+
+      .PRIORITY {
+        margin-top: 15px;
+      }
+      .CATEGORY {
+        margin-top: 15px;
+      }
+
+      .aa {
+        font-size: 20px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="task-form-container">
+      <h2>Create Task</h2>
+      <form method="POST" action="createtask.php">
+        <input type="text" name="taskName" placeholder="Task Name" required />
+
+        <select name="priority" class="PRIORITY" required>
+          <option value="" disabled selected>Priority</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <select name="category" class="CATEGORY" required>
+          <option value="" disabled selected>Category</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Sport">Sport</option>
+        </select>
+
+        <input type="hidden" name="status" value="Pending" />
+
+        <button type="submit">Create Task</button>
+      </form>
+
+      <div class="back-link">
+        <a class="aa" href="index.php">Back to Dashboard</a>
+      </div>
+    </div>
+  </body>
+</html>
